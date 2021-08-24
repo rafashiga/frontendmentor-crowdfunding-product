@@ -1,0 +1,16 @@
+footer {
+	width: 100%;
+	text-align: center;
+	margin: 1rem 0;
+
+	font-size: 0.875rem;
+	font-weight: 500;
+
+	a {
+		color: var(--primary);
+
+		&:hover {
+			opacity: 0.8;
+		}
+	}
+}
