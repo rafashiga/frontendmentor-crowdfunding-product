@@ -8,6 +8,10 @@
 		opacity: 0.5;
 	}
 
+	&--active {
+		border: 2px solid var(--primary);
+	}
+
 	&__header {
 		padding: 2rem 1.5rem 0;
 

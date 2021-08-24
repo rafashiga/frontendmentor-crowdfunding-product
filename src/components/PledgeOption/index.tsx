@@ -38,7 +38,9 @@ export function PledgeOption({
 	return (
 		<div
 			className={
-				'pledge-option ' + (left === 0 ? 'pledge-option--disabled' : '')
+				'pledge-option ' +
+				(left === 0 ? 'pledge-option--disabled' : '') +
+				(inputRadioChecked === value ? 'pledge-option--active' : '')
 			}
 		>
 			<div className='pledge-option__header'>
