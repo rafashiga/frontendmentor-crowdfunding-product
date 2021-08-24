@@ -1,0 +1,39 @@
+@import '../../assets/styles/variables';
+
+.bookmark-btn {
+	border: none;
+	background: var(--gray-150);
+	font-size: 1rem;
+	font-weight: 700;
+	color: var(--gray-500);
+	border-radius: 2rem;
+	position: relative;
+	height: 100%;
+
+	display: flex;
+	align-items: center;
+	gap: 1.5rem;
+
+	transition: all 0.3s;
+
+	&__title {
+		display: none;
+		margin-right: 2rem;
+	}
+
+	&--active {
+		color: var(--primary);
+		background: #f3f7f8;
+
+		img {
+			filter: invert(70%) sepia(8%) saturate(2965%) hue-rotate(127deg)
+				brightness(86%) contrast(89%);
+		}
+	}
+
+	@media (min-width: $desktop) {
+		&__title {
+			display: inline-block;
+		}
+	}
+}

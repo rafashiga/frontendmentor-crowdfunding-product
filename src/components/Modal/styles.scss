@@ -1,0 +1,22 @@
+@import '../../assets/styles/variables';
+
+.modal-card {
+	position: absolute;
+	padding: 2rem;
+	margin: 0 auto;
+	max-height: 80%;
+	overflow-y: scroll;
+	top: 10%;
+	left: 0;
+	right: 0;
+	width: 90%;
+
+	background: #fff;
+	border-radius: 10px;
+
+	@media (min-width: $desktop) {
+		padding: 4rem;
+		width: 60%;
+		max-height: 70%;
+	}
+}
