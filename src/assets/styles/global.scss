@@ -43,3 +43,20 @@ p {
 	font-weight: 500;
 	line-height: 2rem;
 }
+
+.input {
+	margin-right: 1rem;
+	border: 1px solid var(--gray-400);
+	border-radius: 4rem;
+	width: 8rem;
+	padding-left: 2rem;
+
+	&:focus,
+	&:hover {
+		border: 1px solid var(--primary);
+	}
+
+	&--error {
+		border: 1px solid rgb(214, 77, 77);
+	}
+}

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button } from '../Button';
 
 import './styles.scss';
@@ -26,13 +26,25 @@ export function PledgeOption({
 	handleShowSuccess,
 	handleInputRadio,
 }: PledgeOptionProps) {
+	const [pledgeValue, setPledgeValue] = useState('');
+	const [inputInvalid, setInputInvalid] = useState(false);
+
 	const handleShowFooter = (event: any) => {
 		handleInputRadio(event.target.value);
 	};
 
 	const handleContinue = () => {
-		handleCloseModal();
-		handleShowSuccess();
+		if (Number.isInteger(+pledgeValue) && +pledgeValue > 0) {
+			handleCloseModal();
+			handleShowSuccess();
+		} else {
+			setInputInvalid(true);
+		}
+	};
+
+	const handleInputChange = (e: any) => {
+		setPledgeValue(e.target.value);
+		pledgeValue ? setInputInvalid(false) : setInputInvalid(true);
 	};
 
 	return (
@@ -81,7 +93,13 @@ export function PledgeOption({
 					<div>
 						<div className='pledge-option__input-price'>
 							<span>$</span>
-							<input type='text' maxLength={3} />
+							<input
+								type='text'
+								maxLength={3}
+								value={pledgeValue}
+								className={'input ' + (inputInvalid ? 'input--error' : '')}
+								onChange={handleInputChange}
+							/>
 						</div>
 						<Button title='Continue' click={handleContinue} />
 					</div>
